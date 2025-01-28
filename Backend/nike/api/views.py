@@ -30,6 +30,8 @@ import logging
 #    serializer = ProductSerializer(products, many=True)
 #    return Response(serializer.data)
 
+def health_check(request):
+    return JsonResponse({"status": "ok"})
 
 @api_view(['GET'])
 def products(request):

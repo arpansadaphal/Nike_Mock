@@ -6,6 +6,7 @@ from rest_framework_simplejwt.views import (
 
 urlpatterns = [
    
+    path("healthz/", views.health_check, name="healthz"),
     path("products/", views.products, name="products"),
     path("new_products/", views.new_products, name="new_products"),
     path("mens_products/", views.mens_products, name="mens_products"),    
