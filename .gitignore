@@ -1,0 +1,32 @@
+# Ignore virtual environment
+Backend/myenv/
+
+# Ignore media folder
+Backend/nike/media/
+
+# Ignore assets folder
+Backend/nike/assets/
+
+# Ignore environment configuration file
+Backend/.env
+
+# Frontend build artifacts
+Frontend/node_modules/
+Frontend/dist/
+Frontend/build/
+
+# Logs
+Backend/nike/logs/
+*.log
+
+# Django migrations
+Backend/nike/migrations/
+
+# SQLite database
+Backend/nike/db.sqlite3
+
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
