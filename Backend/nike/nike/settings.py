@@ -13,7 +13,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-_g4orv$(u=#6)#j^iiapg0tnk!e%+qaj5exoro-&sp+=t7&dtb"
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -193,14 +193,8 @@ MEDIA_ROOT = BASE_DIR / "media"  # Specify the directory for uploaded files
 # RAZOR_KEY_ID = "key"
 # RAZOR_KEY_SECRET = "secret key"
 
-# RAZOR_KEY_ID = "rzp_test_RO1zXBvs9Vy5Yy"
-# RAZOR_KEY_SECRET = "BfHb1Vd7MTX24CqKgTYUp32W"
+
 RAZORPAY_KEY = config('RAZORPAY_KEY')
 RAZORPAY_SECRET = config('RAZORPAY_SECRET')
 
 
-
-# settings.py
-# CSRF_COOKIE_SECURE = False  # Set to True if using HTTPS
-# CSRF_COOKIE_HTTPONLY = False
-# CSRF_COOKIE_NAME = "csrftoken"  # Default name for the CSRF cookie
