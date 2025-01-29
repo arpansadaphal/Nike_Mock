@@ -177,11 +177,12 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
 ]
 CORS_ALLOWED_ORIGINS = [
+    "https://nike-mock.onrender.com",
     "http://localhost:3000",  # React default
     "http://localhost:5173",  # Vite default
-    "nike-mock.onrender.com",
 ]
 CSRF_TRUSTED_ORIGINS = [
+    "https://nike-mock.onrender.com",
     "http://localhost:5173",  # React development server
 ]
 CORS_ALLOW_CREDENTIALS = True  # Allow credentials like cookies
