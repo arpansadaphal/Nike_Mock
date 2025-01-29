@@ -80,35 +80,6 @@ def products(request):
 
 
 
-
-
-# @api_view(['GET'])
-# def new_products(request):
-#    products = Products.objects.order_by('-createdAt')[:8]
-#    serializer = ProductSerializer(products, many=True)
-#    return Response(serializer.data)
-# @api_view(['GET'])
-# def mens_products(request):
-#    products = Products.objects.filter(gender='men')[:8]
-#    serializer = ProductSerializer(products, many=True)
-#    return Response(serializer.data)
-# @api_view(['GET'])
-# def womens_products(request):
-#    products = Products.objects.filter(gender='women')[:8]
-#    serializer = ProductSerializer(products, many=True)
-#    return Response(serializer.data)
-# @api_view(['GET'])
-# def kids_products(request):
-#    products = Products.objects.filter(gender='kids')[:8]
-#    serializer = ProductSerializer(products, many=True)
-#    return Response(serializer.data)
-
-# @api_view(['GET'])
-# def product(request, id):
-#     product = Products.objects.get(_id=id)
-#     serializer = ProductSerializer(product, many=False)
-#     return Response(serializer.data)
-
 @api_view(['GET'])
 def new_products(request):
     products = Products.objects.order_by('-createdAt')[:8]
@@ -266,120 +237,7 @@ def filter_products(request):
 
     return JsonResponse({'products': results})
 
-# def get_categories(request):
-#     categories = ProductCategory.objects.all()
-#     results = [{"slug": cat.slug, "name": cat.name} for cat in categories]
-#     return JsonResponse({'categories': results})
 
-# @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# def create_order(request):
-#     """
-#     Creates a new order for an authenticated user.
-#     """
-#     data = request.data
-
-#     try:
-#         # Check if cartItems are valid
-#         if not data.get("cartItems"):
-#             return Response({"detail": "Cart items are required"}, status=status.HTTP_400_BAD_REQUEST)
-
-#         # Check if each product exists in the cart
-#         for item in data["cartItems"]:
-#             try:
-#                 product = Products.objects.get(_id=item["product"])
-#             except Products.DoesNotExist:
-#                 return Response({"detail": f"Product with ID {item['product']} not found."}, status=status.HTTP_404_NOT_FOUND)
-
-#         # Create the order
-#         order = Order.objects.create(
-#             user=request.user,
-#             shipping_details=data["shippingDetails"],
-#             payment_method=data["paymentMethod"],
-#             total_price=data["totalPrice"],
-#         )
-
-#         # Create the order items
-#         for item in data["cartItems"]:
-#             product = Products.objects.get(_id=item["product"])
-#             OrderItem.objects.create(
-#                 order=order,
-#                 product=product,
-#                 quantity=item["qty"],
-#                 price=item["price"],
-#             )
-
-#         # Serialize the order and return it
-#         serializer = OrderSerialzer(order)
-#         return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-#     except Exception as e:
-#         # Return a general error message for unexpected errors
-#         return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-
-# @csrf_exempt
-# def create_razorpay_order(request):
-#     if request.method == "POST":
-#         data = json.loads(request.body)
-     
-#         # Extract order details
-#         total_price = data["totalPrice"]
-#         cart_items = data["cartItems"]
-#         shipping_details = data["shippingDetails"]
-
-#         token = request.headers.get("Authorization", "").split("Bearer ")[-1]
-#         access_token = AccessToken(token)
-#         user_id = access_token["user_id"]
-#         user = User.objects.get(id=user_id)
-
-
-#         try:
-#             # Initialize Razorpay client with credentials
-#             client = razorpay.Client(auth=(settings.RAZORPAY_KEY, settings.RAZORPAY_SECRET))
-
-#             # Create Razorpay order
-#             razorpay_order = client.order.create(
-#                 {
-#                     "amount": total_price * 100,  # Amount should be in paise (1 INR = 100 paise)
-#                     "currency": "INR",
-#                     "payment_capture": 1,  # Set to 1 to capture payment immediately
-#                 }
-#             )
-#              # Save order to the database
-#             order = Order.objects.create(
-#                 user=user,
-#                 # payment_method=payment_method,
-#                 total_price=total_price,
-#                 razorpay_order_id=razorpay_order["id"],
-#                 shipping_details=shipping_details
-#             )
-
-#             # Save order items
-#             # for item in cart_items:
-#             #     OrderItem.objects.create(
-#             #         order=order,
-#             #         product_id=item["productId"],  # Ensure you pass `productId` in the request
-#             #         quantity=item["quantity"],
-#             #         price=item["price"],
-#             #     )
-
-#             return JsonResponse(
-#                 {
-#                     "key_id": settings.RAZORPAY_KEY,  # The Razorpay API key for the frontend to use
-#                     "razorpay_order_id": razorpay_order["id"],
-#                     "amount": total_price * 100,  # Amount in paise
-#                     "currency": "INR",
-#                 }
-#             )
-
-#         except razorpay.errors.BadRequestError as e:
-#             # Handle BadRequestError (e.g., invalid API keys)
-#             return JsonResponse({"error": str(e)}, status=400)
-
-#         except Exception as e:
-#             # Catch other errors
-#             return JsonResponse({"error": str(e)}, status=500)
 
 @ensure_csrf_cookie
 def get_csrf_token(request):
@@ -524,13 +382,7 @@ def get_order_details(request, order_id):
                 }
                 for item in order_items
             ]
-            # print("oorder items : ",order_items)
-            # for item in order_items:
-            #  print(f"Item ID: {item.id}, Product Name: {item.product.productname},Quantity: {item.quantity}, Price: {item.price}")
-            # print("Items: ",items)
-
-            # print("items : ",items)
-            # Return all order details, including items, in JSON response
+       
             return JsonResponse({
                 "status": "success",
                 "order": {
