@@ -179,6 +179,7 @@ CORS_ALLOW_HEADERS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React default
     "http://localhost:5173",  # Vite default
+    "nike-mock.onrender.com",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",  # React development server
@@ -197,7 +198,7 @@ RAZORPAY_KEY = config('RAZORPAY_KEY')
 RAZORPAY_SECRET = config('RAZORPAY_SECRET')
 
 
-DEBUG = True
+
 # settings.py
 # CSRF_COOKIE_SECURE = False  # Set to True if using HTTPS
 # CSRF_COOKIE_HTTPONLY = False
