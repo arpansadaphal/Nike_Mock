@@ -18,7 +18,7 @@ SECRET_KEY = "django-insecure-_g4orv$(u=#6)#j^iiapg0tnk!e%+qaj5exoro-&sp+=t7&dtb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["nike-mock.onrender.com",]
 
 
 # Application definition
