@@ -118,7 +118,8 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (filters) => {
     const queryString = new URLSearchParams(filters).toString();
-    const response = await fetch(`/api/products/?${queryString}`);
+   // const response = await fetch(`/api/products/?${queryString}`);
+    const response = await fetch(`/products/?${queryString}`);
     return await response.json();
   }
 );
