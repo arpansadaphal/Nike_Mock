@@ -68,7 +68,8 @@ import Cookies from "js-cookie"; // Install using `npm install js-cookie`
 
 // Create an axios instance
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api/",
+   baseURL: "https://nike-mock.onrender.com/api/"
+  // baseURL: "http://localhost:8000/api/",
   withCredentials: true, // Include cookies in requests
 });
 
@@ -105,7 +106,8 @@ axiosInstance.interceptors.response.use(
       if (refreshToken) {
         try {
           const { data } = await axios.post(
-            "http://localhost:8000/api/token/refresh/",
+              "https://nike-mock.onrender.com/api/token/refresh/",
+         //   "http://localhost:8000/api/token/refresh/",
             { refresh: refreshToken }
           );
 
