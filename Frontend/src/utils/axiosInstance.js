@@ -68,7 +68,7 @@ import Cookies from "js-cookie"; // Install using `npm install js-cookie`
 
 // Create an axios instance
 const axiosInstance = axios.create({
-   baseURL: "https://nike-mock.onrender.com/api/"
+   baseURL: "https://nike-mock.onrender.com/api/",
   // baseURL: "http://localhost:8000/api/",
   withCredentials: true, // Include cookies in requests
 });
