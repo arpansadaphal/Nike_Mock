@@ -11,8 +11,9 @@ const ProductCard = ({ product, label }) => {
       <Link to={`/product/${_id}`}>
         <div className="relative">
           <img
+            src={main_image}
            // src={`http://localhost:8000${main_image}`}
-          src={`https://nike-mock.onrender.com${main_image}`}
+       //   src={`https://nike-mock.onrender.com${main_image}`}
             alt={productname}
             className="w-full h-64 object-cover rounded-t-lg"
           />
