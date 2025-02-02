@@ -4,7 +4,7 @@ export const addToCart = createAsyncThunk(
   "cart/addToCart",
   async ({ id, qty }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`/api/product/${id}`);
+      const { data } = await axios.get(`https://nike-mock.onrender.com/api/product/${id}`);
       return {
         product: data._id,
         productname: data.productname,
