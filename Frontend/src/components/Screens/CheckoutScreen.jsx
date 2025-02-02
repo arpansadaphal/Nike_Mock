@@ -84,8 +84,8 @@ const Checkout = () => {
       // };
 
       const { data: razorpayOrder } = await axiosInstance.post(
-        "https://nike-mock.onrender.com/api/create_razorpay_order/",
-      //  "/create_razorpay_order/",
+       // "https://nike-mock.onrender.com/api/create_razorpay_order/",
+        "/create_razorpay_order/",
         orderData
         // config
       );
@@ -100,8 +100,8 @@ const Checkout = () => {
         handler: async (response) => {
           try {
             const verificationResponse = await axiosInstance.post(
-            "https://nike-mock.onrender.com/api/verify-payment/",
-            // "/verify-payment/",
+          //  "https://nike-mock.onrender.com/api/verify-payment/",
+            "/verify-payment/",
               response
               // config
             );
