@@ -18,7 +18,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["nike-mock.onrender.com","https://nikemock.vercel.app/"]
+ALLOWED_HOSTS = ["nike-mock.onrender.com","https://nikemock.vercel.app"]
 
 
 # Application definition
@@ -178,13 +178,13 @@ CORS_ALLOW_HEADERS = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "https://nike-mock.onrender.com",
-    "https://nikemock.vercel.app/",
+    "https://nikemock.vercel.app",
     "http://localhost:3000",  # React default
     "http://localhost:5173",  # Vite default
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://nike-mock.onrender.com",
-    "https://nikemock.vercel.app/",
+    "https://nikemock.vercel.app",
     "http://localhost:5173",  # React development server
 ]
 CORS_ALLOW_CREDENTIALS = True  # Allow credentials like cookies
