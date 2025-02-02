@@ -6,7 +6,7 @@ export const login = createAsyncThunk(
   async ({ email, password }, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        "api/users/login/",
+        "https://nike-mock.onrender.com/api/users/login/",
         { username: email, password: password },
         { headers: { "Content-Type": "application/json" } }
       );
