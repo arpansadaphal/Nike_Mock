@@ -6,7 +6,7 @@ export const signup = createAsyncThunk(
   async ({ fname, lname, email, password }, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        "api/users/register/",
+        "https://nike-mock.onrender.com/api/users/register/",
         {
           fname: fname,
           lname: lname,
