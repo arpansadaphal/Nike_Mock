@@ -78,7 +78,8 @@ const Categories = () => {
           >
             <div className={styles.categoryCard}>
               <img
-                src={`http://localhost:8000${category.image}`}
+              //  src={`http://localhost:8000${category.image}`}
+               src={`https://nike-mock.onrender.com${category.image}`}
                 alt={category.name}
                 className={styles.categoryImage}
               />
