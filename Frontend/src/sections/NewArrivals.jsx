@@ -15,7 +15,7 @@ const NewArrivals = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/new_products/"
+          "https://nike-mock.onrender.com/api/new_products/"
         );
         setProducts(response.data);
         console.log("Fetched products:", response.data);
