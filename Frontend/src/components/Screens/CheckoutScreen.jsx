@@ -178,7 +178,7 @@ const Checkout = () => {
               >
                 <div className="flex items-center">
                   <img
-                    src={`https://nike-mock.onrender.com${item.image}`}
+                    src={item.image}
                     alt={item.productname}
                     className="w-24 h-24 object-cover rounded-md"
                   />
