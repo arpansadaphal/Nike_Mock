@@ -28,7 +28,7 @@ const Hero = () => {
           </span>{" "}
           Shoes
         </h1>
-    {/*      <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm pl-5">
+          <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm pl-5">
           This is a personal project/mock-up and is not affiliated with or
           endorsed by Nike, Inc. The content and design are for demonstration
           purposes only
