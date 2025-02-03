@@ -74,7 +74,7 @@ const Checkout = () => {
 
     setIsPaymentProcessing(true);*/
     
-    const handlePayment = async () => {
+   /* const handlePayment = async () => {
   try {
     const { data } = await axiosInstance.post("/create_razorpay_order/", orderData);
     console.log("Order Created:", data);  // Add this
@@ -152,7 +152,84 @@ const Checkout = () => {
     } finally {
       setIsPaymentProcessing(false);
     }
-  };
+  };*/
+
+  
+const handlePayment = async () => {
+    const errorMessage = validateForm();
+    if (errorMessage) {
+      alert(errorMessage);
+      return;
+    }
+
+    const orderData = {
+      cartItems,
+      shippingDetails,
+      totalPrice: calculateTotal(),
+    };
+
+    setIsPaymentProcessing(true);
+
+    try {
+      console.log("Initiating payment with order data:", orderData);
+
+      const { data: razorpayOrder } = await axiosInstance.post(
+        "/create_razorpay_order/", // Removed extra "/api"
+        orderData
+      );
+
+      console.log("Razorpay Order Created:", razorpayOrder);
+
+      const options = {
+        key_id: razorpayOrder.key_id || "rzp_test_RO1zXBvs9Vy5Yy",
+        amount: razorpayOrder.amount,
+        currency: razorpayOrder.currency,
+        name: "Nike",
+        description: "Payment for Order",
+        order_id: razorpayOrder.razorpay_order_id,
+        handler: async (response) => {
+          try {
+            console.log("Payment success response:", response);
+
+            const verificationResponse = await axiosInstance.post(
+              "/verify-payment/", // Removed extra "/api"
+              response
+            );
+
+            console.log("Payment Verified:", verificationResponse.data);
+            alert("Payment Successful!");
+            navigate(`/order/${razorpayOrder.razorpay_order_id}`);
+          } catch (verificationError) {
+            console.error("Payment Verification Failed:", verificationError.response?.data || verificationError);
+            alert("Payment verification failed. Please contact support.");
+          }
+        },
+        prefill: {
+          name: shippingDetails.name || userInfo.name,
+          email: shippingDetails.email || userInfo.email,
+          contact: shippingDetails.phone,
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.on("payment.failed", (response) => {
+        console.error("Payment Failed:", response.error);
+        alert(`Payment failed: ${response.error.description}`);
+      });
+
+      rzp.open();
+    } catch (error) {
+      console.error("Payment Initialization Error:", error.response?.data || error);
+      alert(`Payment Initialization Error: ${JSON.stringify(error.response?.data || error.message)}`);
+    } finally {
+      setIsPaymentProcessing(false);
+    }
+};
+
+
 
   useEffect(() => {
     const savedDetails = localStorage.getItem("shippingDetails");
