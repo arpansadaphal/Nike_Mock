@@ -244,7 +244,7 @@ def get_csrf_token(request):
     return JsonResponse({"message": "CSRF cookie set"})
 
 
-
+@csrf_exempt
 def create_razorpay_order(request):
     if request.method == "POST":
         data = json.loads(request.body)
@@ -321,7 +321,7 @@ def create_razorpay_order(request):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
 
-
+@csrf_exempt
 def verify_payment(request):
     if request.method == "POST":
         try:
@@ -361,7 +361,7 @@ def verify_payment(request):
         return JsonResponse({"status": "error", "message": "Invalid request method."}, status=405)
 
 
-
+@csrf_exempt
 def get_order_details(request, order_id):
     if request.method == "GET":
         try:
@@ -406,7 +406,7 @@ def get_order_details(request, order_id):
             return JsonResponse({"status": "error", "message": str(e)}, status=500)
     else:
         return JsonResponse({"status": "error", "message": "Invalid request method."}, status=405)
-
+@csrf_exempt
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def order_history(request):
@@ -445,7 +445,7 @@ def order_history(request):
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
 
-
+@csrf_exempt
 def initiate_refund(request):
     if request.method == "POST":
         try:
