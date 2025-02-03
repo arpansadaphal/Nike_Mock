@@ -59,7 +59,7 @@ const Checkout = () => {
     return "";
   };
 
-  const handlePayment = async () => {
+  /*const handlePayment = async () => {
     const errorMessage = validateForm();
     if (errorMessage) {
       alert(errorMessage);
@@ -72,7 +72,19 @@ const Checkout = () => {
       totalPrice: calculateTotal(),
     };
 
-    setIsPaymentProcessing(true);
+    setIsPaymentProcessing(true);*/
+    
+    const handlePayment = async () => {
+  try {
+    const { data } = await axiosInstance.post("/create_razorpay_order/", orderData);
+    console.log("Order Created:", data);  // Add this
+    alert(`Order created: ${JSON.stringify(data)}`);
+  } catch (error) {
+    console.error("Payment Error:", error.response?.data);
+    alert(`Error: ${JSON.stringify(error.response?.data)}`);
+  }
+};
+
 
     try {
       // const config = {
