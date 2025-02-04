@@ -119,7 +119,7 @@ export const fetchProducts = createAsyncThunk(
   async (filters) => {
     const queryString = new URLSearchParams(filters).toString();
    // const response = await fetch(`/api/products/?${queryString}`);
-    const response = await fetch(`/products/?${queryString}`);
+    const response = await fetch(`https://nike-mock.onrender.com/api/products/?${queryString}`);
     return await response.json();
   }
 );
