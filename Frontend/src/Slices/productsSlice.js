@@ -114,7 +114,7 @@ import { fetchProducts as apiFetchProducts, fetchNewProducts as apiFetchNewProdu
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Thunk to fetch products based on filters
-/*export const fetchProducts = createAsyncThunk(
+export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (filters) => {
     const queryString = new URLSearchParams(filters).toString();
@@ -122,7 +122,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
     const response = await fetch(`/products/?${queryString}`);
     return await response.json();
   }
-);*/
+);
 // export const fetchProducts = createAsyncThunk(
 //   "products/fetchProducts",
 //   async () => {
@@ -131,6 +131,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 //     console.log(response.data)
 //   }
 // );
+/*
 export const fetchProducts = async (filters) => {
   try {
     const validFilters = Object.fromEntries(
@@ -148,7 +149,7 @@ export const fetchProducts = async (filters) => {
     throw error;
   }
 };
-
+*/
 
 export const fetchNewProducts = createAsyncThunk(
   "new_products/fetchNewProducts",
