@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nike-mock
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn nike.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: nike.settings
+      - key: DEBUG
+        value: "False"
+      - key: MEDIA_URL
+        value: "/media/"
+      - key: MEDIA_ROOT
+        value: "/var/www/media/"
