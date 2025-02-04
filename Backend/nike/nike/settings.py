@@ -189,8 +189,19 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True  # Allow credentials like cookies
 
+#MEDIA_URL = "/media/"
+#MEDIA_ROOT = BASE_DIR / "media"  # Specify the directory for uploaded files
+# Media Files (Uploaded images, etc.)
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"  # Specify the directory for uploaded files
+MEDIA_ROOT = BASE_DIR / "media"
+
+# Ensure static files are collected
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Additional settings for Render
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # RAZOR_KEY_ID = "key"
 # RAZOR_KEY_SECRET = "secret key"
