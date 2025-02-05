@@ -18,5 +18,4 @@ stripe==11.4.1
 typing_extensions==4.12.2
 tzdata==2024.2
 urllib3==2.3.0
-cloudinary==1.30.0
-django-cloudinary-storage==0.5.1
+
