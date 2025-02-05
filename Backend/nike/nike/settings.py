@@ -8,13 +8,6 @@ import cloudinary.uploader
 import cloudinary.api
 from cloudinary.storage import CloudinaryStorage
 
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "dnl8xcyir",
-    "API_KEY": "176777252912329",
-    "API_SECRET": "rKXSXw4xDgYYdSZQe3cA51KF5TY",
-}
-
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -222,6 +215,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Additional settings for Render
 if not DEBUG:
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 
 # RAZOR_KEY_ID = "key"
 # RAZOR_KEY_SECRET = "secret key"
