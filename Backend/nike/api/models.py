@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+"""
 # Product Category Model
 class ProductCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -49,7 +49,57 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f"{self.product.productname} Image"
+
+"""
  
+from cloudinary.models import CloudinaryField
+
+class ProductCategory(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, max_length=100)
+    description = models.TextField(blank=True, null=True)
+    image = CloudinaryField('image', null=True, blank=True)  # ✅ Use CloudinaryField
+
+    def __str__(self):
+        return self.name
+
+class Products(models.Model):
+    GENDER_CHOICES = [
+        ('men', 'Men'),
+        ('women', 'Women'),
+        ('unisex', 'Unisex'),
+        ('kids', 'Kids'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    productname = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True)
+    productbrand = models.CharField(max_length=100, null=True, blank=True)
+    productcategory = models.ForeignKey(ProductCategory, related_name='products', on_delete=models.CASCADE)
+    productinfo = models.TextField()
+    price = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='unisex')
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
+    _id = models.AutoField(primary_key=True, editable=False)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.productname)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.productname
+
+class ProductImage(models.Model):
+    product = models.ForeignKey('Products', on_delete=models.CASCADE, related_name='images')
+    image = CloudinaryField('image')  # ✅ Use CloudinaryField
+    is_main = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.product.productname} Image"
+
 
 class ProductVariant(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='variants')
