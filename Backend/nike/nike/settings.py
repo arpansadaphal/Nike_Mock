@@ -3,6 +3,19 @@ from datetime import timedelta
 from decouple import config
 import os
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary.storage import CloudinaryStorage
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dnl8xcyir",
+    "API_KEY": "176777252912329",
+    "API_SECRET": "rKXSXw4xDgYYdSZQe3cA51KF5TY",
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
