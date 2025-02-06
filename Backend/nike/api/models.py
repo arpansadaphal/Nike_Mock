@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-#from cloudinary.models import CloudinaryField
+from cloudinary.models import CloudinaryField
 
-
+"""
 # Product Category Model
 class ProductCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -101,7 +101,7 @@ class ProductImage(models.Model):
     def __str__(self):
         return f"{self.product.productname} Image"
 
-"""
+
 
 class ProductVariant(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='variants')
