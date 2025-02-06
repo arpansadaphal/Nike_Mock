@@ -103,8 +103,15 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+"""
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
+"""
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3')
+    )
 }
 
 # Password validation
