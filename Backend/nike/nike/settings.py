@@ -85,14 +85,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "nike.wsgi.application"
-
+"""
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": config("CLOUDINARY_CLOUD_NAME"),
     "API_KEY": config("CLOUDINARY_API_KEY"),
     "API_SECRET": config("CLOUDINARY_API_SECRET"),
 }
 
-#DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+"""
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -109,11 +110,15 @@ DATABASES = {
 }
 """
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3')
-    )
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dnl8xcyir",
+    "API_KEY": "176777252912329",
+    "API_SECRET": "rKXSXw4xDgYYdSZQe3cA51KF5TY",
 }
 
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
