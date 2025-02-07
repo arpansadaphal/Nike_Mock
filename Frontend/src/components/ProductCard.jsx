@@ -12,7 +12,8 @@ const ProductCard = ({ product, label }) => {
         <div className="relative">
          
           <img
-            src={`https://nike-mock.onrender.com${main_image}`}
+           // src={`https://nike-mock.onrender.com${main_image}`}
+            src={main_image} 
             alt={productname}
             className="w-full h-64 object-cover rounded-t-lg"
           />
