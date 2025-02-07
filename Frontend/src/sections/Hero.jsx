@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { shoes, bigShoe1 } from "../constants";
+import { shoes } from "../constants";
 import { Button, ShoeCard } from "../components";
-//import { bigShoe1 } from "../assets/images";
+import { bigShoe1 } from "../assets/images";
 import { arrowRight } from "../assets/icons";
 
 const Hero = () => {
