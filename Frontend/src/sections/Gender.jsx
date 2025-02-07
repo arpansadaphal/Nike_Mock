@@ -30,10 +30,10 @@ const GenderSection = () => {
           <Gender imageSrc="https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/a22e7bb8-4517-4349-80d4-fc184c4c72db/men-s-shoes-clothing-accessories.jpg" title="Men" />
         </Link>
         <Link to={"/products?gender=women"}>
-          <Gender imageSrc="/images/women.png" title="Women" />
+          <Gender imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQS6I-St_r7H27eHAcGJfhMyX3t5guOZjhZVa6XKuiDYH9OxgO9WBKemwM&s=10" title="Women" />
         </Link>
         <Link to={"/products?gender=kids"}>
-          <Gender imageSrc="/images/kids.png" title="Kids" />
+          <Gender imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Fx6-BqIaVX6rGeGZCz1mXMshqAD4RFqO-w&usqp=CAU" title="Kids" />
         </Link>
       </div>
     </div>
