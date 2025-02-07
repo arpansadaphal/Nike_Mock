@@ -68,7 +68,7 @@ const ProductScreen = () => {
       {product.images.map((image, index) => (
         <div key={index} className="p-4">
           <img
-            src={image.image} // Direct Cloudinary URL
+            src={`https://res.cloudinary.com/dnl8xcyir/${image.image}`}
             alt={`Product Image ${index + 1}`}
             className="w-full h-auto object-cover rounded-lg"
           />
@@ -78,7 +78,7 @@ const ProductScreen = () => {
   ) : (
     <div className="p-4">
       <img
-        src={product.image} // Direct Cloudinary URL
+        src={`https://res.cloudinary.com/dnl8xcyir/${image.image}`}
         alt="Default Product"
         className="w-full h-auto object-cover rounded-lg shadow-lg"
       />
