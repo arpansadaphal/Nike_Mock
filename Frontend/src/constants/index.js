@@ -41,8 +41,8 @@ export const shoes = [
     bigShoe: "https://w7.pngwing.com/pngs/471/670/png-transparent-nike-flywire-shoe-nike-acg-boot-nike-white-outdoor-shoe-sneakers.png",
   },
   {
-    thumbnail: "https://asset.cloudinary.com/dnl8xcyir/d320c535993c4ed7c3680abaac707689",
-    bigShoe: "https://asset.cloudinary.com/dnl8xcyir/d320c535993c4ed7c3680abaac707689",
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738953045/pngwing.com_5_humiuo.png",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738953045/pngwing.com_5_humiuo.png",
   },
   {
     thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915884/shoe-thumbnail-3.jpg",
