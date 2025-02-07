@@ -27,7 +27,7 @@ const GenderSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Corrected gender link as string */}
         <Link to={"/products?gender=men"}>
-          <Gender imageSrc="/images/men.jpg" title="Men" />
+          <Gender imageSrc="https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/a22e7bb8-4517-4349-80d4-fc184c4c72db/men-s-shoes-clothing-accessories.jpg" title="Men" />
         </Link>
         <Link to={"/products?gender=women"}>
           <Gender imageSrc="/images/women.png" title="Women" />
