@@ -41,6 +41,12 @@ const CartScreen = () => {
                     className="flex items-center gap-4 border-b pb-4 mb-4"
                   >
                     <img
+  src={item.image.startsWith("http") ? item.image : `https://res.cloudinary.com/dnl8xcyir/${item.image}`}
+  alt={item.productname}
+  className="w-24 h-24 object-cover rounded-md"
+/>
+
+                    <img
                       src={`https://res.cloudinary.com/dnl8xcyir/${item.image}`}
                       alt={item.productname}
                       className="w-24 h-24 object-cover rounded-md"
