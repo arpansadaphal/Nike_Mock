@@ -63,29 +63,29 @@ const ProductScreen = () => {
           {/* Product Image Slider */}
 
           <div className="md:w-1/2 w-full">
-            {product?.images?.length > 0 ? (
-              <Slider {...sliderSettings} className="rounded-lg shadow-lg">
-                {product.images.map((image, index) => (
-                  <div key={index} className="p-4">
-                    <img
-                       src={image.image} // Direct Cloudinary URL
-                       alt={`Product Image ${index + 1}`}
-                       className="w-full h-auto object-cover rounded-lg"
-                    />
+  {product?.images?.length > 0 ? (
+    <Slider {...sliderSettings} className="rounded-lg shadow-lg">
+      {product.images.map((image, index) => (
+        <div key={index} className="p-4">
+          <img
+            src={image.image} // Direct Cloudinary URL
+            alt={`Product Image ${index + 1}`}
+            className="w-full h-auto object-cover rounded-lg"
+          />
+        </div>
+      ))}
+    </Slider>
+  ) : (
+    <div className="p-4">
+      <img
+        src={product.image} // Direct Cloudinary URL
+        alt="Default Product"
+        className="w-full h-auto object-cover rounded-lg shadow-lg"
+      />
+    </div>
+  )}
+</div>
 
-                  </div>
-                ))}
-              </Slider>
-            ) : (
-              <div className="p-4">
-                <img
-                  src={`http://localhost:8000${product.image || ""}`}
-                  alt="Default Product"
-                  className="w-full h-auto object-cover rounded-lg shadow-lg"
-                />
-              </div>
-            )}
-          </div>
 
           {/* Product Details */}
           <div className="md:w-1/2 w-full p-4 pt-10">
