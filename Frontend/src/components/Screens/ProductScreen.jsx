@@ -78,13 +78,14 @@ const ProductScreen = () => {
   ) : (
     <div className="p-4">
       <img
-        src={`https://res.cloudinary.com/dnl8xcyir/${image.image}`}
+        src={`https://res.cloudinary.com/dnl8xcyir/${product.main_image}`}
         alt="Default Product"
         className="w-full h-auto object-cover rounded-lg shadow-lg"
       />
     </div>
   )}
 </div>
+
 
 
           {/* Product Details */}
