@@ -112,7 +112,7 @@ DATABASES = {
     'default': dj_database_url.config(default="postgresql://nike_db_xjs8_user:PxnZmH2hjiktuU8sNVBXR6ctXD1zolWh@dpg-cuc9c39u0jms73850nfg-a/nike_db_xjs8")
 }
 
-
+"""
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": "dnl8xcyir",
     "API_KEY": "176777252912329",
@@ -120,6 +120,7 @@ CLOUDINARY_STORAGE = {
 }
 
 #DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
