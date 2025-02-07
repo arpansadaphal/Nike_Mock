@@ -6,7 +6,7 @@ export const fetchProductById = createAsyncThunk(
   "products/fetchProductById",
   async (id, { rejectWithValue }) => {
     if (!id) return rejectWithValue("Product ID is missing");
-    const response = await API.get(`/product/${id}`);
+    const response = await API.get(`https://nike-mock.onrender.com/api/product/${id}`);
     return response.data;
   }
 );
