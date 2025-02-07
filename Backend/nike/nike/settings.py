@@ -109,10 +109,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-from cloudinary.storage import CloudinaryStorage
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -239,5 +236,21 @@ if not DEBUG:
 
 RAZORPAY_KEY = config('RAZORPAY_KEY')
 RAZORPAY_SECRET = config('RAZORPAY_SECRET')
+
+# Cloudinary Imports (Move to the bottom)
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary.storage import CloudinaryStorage
+
+# Cloudinary Configuration
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": config("CLOUD_NAME", default="dnl8xcyir"),
+    "API_KEY": config("CLOUDINARY_API_KEY", default="176777252912329"),
+    "API_SECRET": config("CLOUDINARY_API_SECRET", default="rKXSXw4xDgYYdSZQe3cA51KF5TY"),
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 
