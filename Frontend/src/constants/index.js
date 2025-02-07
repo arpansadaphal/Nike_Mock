@@ -37,16 +37,16 @@ export const LoggedINnavLinks = [
 ];
 export const shoes = [
   {
-    thumbnail: "https://w7.pngwing.com/pngs/471/670/png-transparent-nike-flywire-shoe-nike-acg-boot-nike-white-outdoor-shoe-sneakers.png",
-    bigShoe: "https://w7.pngwing.com/pngs/471/670/png-transparent-nike-flywire-shoe-nike-acg-boot-nike-white-outdoor-shoe-sneakers.png",
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952449/pngwing.com_4_wgavhx.png",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952449/pngwing.com_4_wgavhx.png",
   },
   {
     thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738953045/pngwing.com_5_humiuo.png",
     bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738953045/pngwing.com_5_humiuo.png",
   },
   {
-    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915884/shoe-thumbnail-3.jpg",
-    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915884/shoe-big-3.jpg",
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952473/pngwing.com_3_bzc6qb.png",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952473/pngwing.com_3_bzc6qb.png",
   },
 ];
 
