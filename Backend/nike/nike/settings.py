@@ -3,10 +3,6 @@ from datetime import timedelta
 from decouple import config
 import os
 import dj_database_url
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-from cloudinary.storage import CloudinaryStorage
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -85,13 +81,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "nike.wsgi.application"
-"""
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": config("CLOUDINARY_CLOUD_NAME"),
-    "API_KEY": config("CLOUDINARY_API_KEY"),
-    "API_SECRET": config("CLOUDINARY_API_SECRET"),
-}
-"""
+
 #DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
@@ -108,20 +98,7 @@ CLOUDINARY_STORAGE = {
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
-"""
-DATABASES = {
-    'default': dj_database_url.config(default="postgresql://nike_db_xjs8_user:PxnZmH2hjiktuU8sNVBXR6ctXD1zolWh@dpg-cuc9c39u0jms73850nfg-a/nike_db_xjs8")
-}
-"""
-"""
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "dnl8xcyir",
-    "API_KEY": "176777252912329",
-    "API_SECRET": "rKXSXw4xDgYYdSZQe3cA51KF5TY",
-}
 
-#DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-"""
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
