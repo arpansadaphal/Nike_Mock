@@ -105,13 +105,14 @@ CLOUDINARY_STORAGE = {
 #     }
 # }
 
-"""DATABASES = {
+DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-}"""
+}
+"""
 DATABASES = {
     'default': dj_database_url.config(default="postgresql://nike_db_xjs8_user:PxnZmH2hjiktuU8sNVBXR6ctXD1zolWh@dpg-cuc9c39u0jms73850nfg-a/nike_db_xjs8")
 }
-
+"""
 """
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": "dnl8xcyir",
