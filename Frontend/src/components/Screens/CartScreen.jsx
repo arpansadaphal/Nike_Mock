@@ -46,11 +46,7 @@ const CartScreen = () => {
   className="w-24 h-24 object-cover rounded-md"
 />
 
-                    <img
-                      src={`https://res.cloudinary.com/dnl8xcyir/${item.image}`}
-                      alt={item.productname}
-                      className="w-24 h-24 object-cover rounded-md"
-                    />
+                   
                     <div className="flex-1">
                       <h2 className="text-lg font-semibold">
                         {item.productname}
