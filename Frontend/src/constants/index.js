@@ -35,21 +35,22 @@ export const LoggedINnavLinks = [
   { href: "/cart", label: "Cart" },
   { href: "/orders", label: "Orders" },
 ];
-
 export const shoes = [
   {
-    thumbnail: thumbnailShoe1,
-    bigShoe: bigShoe1,
+    thumbnail: "https://w7.pngwing.com/pngs/471/670/png-transparent-nike-flywire-shoe-nike-acg-boot-nike-white-outdoor-shoe-sneakers.png",
+    bigShoe: "https://w7.pngwing.com/pngs/471/670/png-transparent-nike-flywire-shoe-nike-acg-boot-nike-white-outdoor-shoe-sneakers.png",
   },
   {
-    thumbnail: thumbnailShoe2,
-    bigShoe: bigShoe2,
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915883/shoe-thumbnail-2.jpg",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915883/shoe-big-2.jpg",
   },
   {
-    thumbnail: thumbnailShoe3,
-    bigShoe: bigShoe3,
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915884/shoe-thumbnail-3.jpg",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738915884/shoe-big-3.jpg",
   },
 ];
+
+
 
 export const statistics = [
   { value: "1k+", label: "Brands" },
