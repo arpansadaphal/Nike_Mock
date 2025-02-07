@@ -68,10 +68,11 @@ const ProductScreen = () => {
                 {product.images.map((image, index) => (
                   <div key={index} className="p-4">
                     <img
-                      src={`http://localhost:8000${image.image}`}
-                      alt={`Product Image ${index + 1}`}
-                      className="w-full h-auto object-cover rounded-lg"
+                       src={image.image} // Direct Cloudinary URL
+                       alt={`Product Image ${index + 1}`}
+                       className="w-full h-auto object-cover rounded-lg"
                     />
+
                   </div>
                 ))}
               </Slider>
