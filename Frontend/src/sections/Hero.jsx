@@ -6,7 +6,7 @@ import { bigShoe1 } from "../assets/images";
 import { arrowRight } from "../assets/icons";
 
 const Hero = () => {
-  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+  const [bigShoeImg, setBigShoeImg] = useState("https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952449/pngwing.com_4_wgavhx.png");
 
   return (
     <section
