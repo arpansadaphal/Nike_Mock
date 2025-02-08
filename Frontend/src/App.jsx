@@ -34,7 +34,7 @@ const App = () => {
     getCsrfToken();
   }, []);
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route
           path="/"
@@ -96,7 +96,7 @@ const App = () => {
         <Route path="/newarrivals" element={<NewArrivals />} />
         <Route path="/orders" element={<OrderHistory />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
