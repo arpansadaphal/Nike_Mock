@@ -9,8 +9,9 @@ const Layout = ({ children }) => {
       <Nav className="fixed top-0 left-0 right-0 z-50  shadow-md" />
       <div className="container mx-auto px-4 pt-24 ">{children}</div>
       <div className="padding-x padding-t pt-5 pb-8">
-       <Footer className="max-container pt-10 min-h-[200px] border border-red-500"/>
-
+         <section className=" bg-black padding-x padding-t pb-8">
+                <Footer />
+              </section>
 
       </div>
     </div>
