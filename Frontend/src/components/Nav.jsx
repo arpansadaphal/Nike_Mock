@@ -26,7 +26,7 @@ const Nav = () => {
     <header className="padding-x py-8 absolute z-10 w-full">
       <nav className="flex justify-between items-center max-container">
         {/* Logo */}
-        <a href="/">
+        <Link to="/">
           <img
             src={headerLogo}
             alt="logo"
@@ -34,18 +34,18 @@ const Nav = () => {
             height={29}
             className="m-0 w-[129px] h-[29px]"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <ul className="flex-1 flex justify-center items-center gap-16 hidden lg:flex">
           {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
             <li key={item.label}>
-              <a
-                href={item.href}
+              <Link
+                to={item.href} // ✅ Changed from href to to
                 className="font-montserrat leading-normal text-lg text-slate-gray"
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -100,12 +100,12 @@ const Nav = () => {
               <ul className="flex flex-col gap-4">
                 {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href} // ✅ Changed from href to to
                       className="font-montserrat text-lg text-slate-gray hover:text-black transition-all duration-300"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
                 {userInfo && (
@@ -144,3 +144,4 @@ const Nav = () => {
 };
 
 export default Nav;
+
