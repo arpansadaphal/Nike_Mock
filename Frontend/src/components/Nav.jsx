@@ -16,6 +16,7 @@ const Nav = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
+    setMenuOpen(false); // ✅ Close menu after logout
   };
 
   const toggleMenu = () => {
@@ -23,7 +24,7 @@ const Nav = () => {
   };
 
   return (
-    <header className="padding-x py-8 absolute z-10 w-full">
+    <header className="padding-x py-8 fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <nav className="flex justify-between items-center max-container">
         {/* Logo */}
         <Link to="/">
@@ -41,7 +42,7 @@ const Nav = () => {
           {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
             <li key={item.label}>
               <Link
-                to={item.href} // ✅ Changed from href to to
+                to={item.href} 
                 className="font-montserrat leading-normal text-lg text-slate-gray"
               >
                 {item.label}
@@ -94,56 +95,62 @@ const Nav = () => {
             onClick={toggleMenu}
             className="cursor-pointer"
           />
-        {/* Mobile Menu */}
-{menuOpen && (
-  <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-20">
-    <ul className="flex flex-col gap-4">
-      {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
-        <li key={item.label}>
-          <Link
-            to={item.href}
-            onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
-            className="font-montserrat text-lg text-slate-gray hover:text-black transition-all duration-300"
-          >
-            {item.label}
-          </Link>
-        </li>
-      ))}
-      {userInfo && (
-        <li>
-          <button
-            onClick={() => {
-              logoutHandler();
-              setMenuOpen(false); // ✅ Close menu after logout
-            }}
-            className="w-full px-4 py-2 bg-gray-500 hover:bg-red-700 text-white rounded-lg transition-all duration-300"
-          >
-            Logout
-          </button>
-        </li>
-      )}
-      {!userInfo && (
-        <li className="flex justify-between">
-          <Link
-            to="/signup"
-            onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
-            className="text-slate-gray hover:text-black transition-all duration-300"
-          >
-            Sign up
-          </Link>
-          <Link
-            to="/login"
-            onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
-            className="text-slate-gray hover:text-black transition-all duration-300"
-          >
-            Log in
-          </Link>
-        </li>
-      )}
-    </ul>
-  </div>
-)}
-
+          
+          {/* Mobile Menu */}
+          {menuOpen && (
+            <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-50">
+              <ul className="flex flex-col gap-4">
+                {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      to={item.href}
+                      onClick={(e) => {
+                        e.stopPropagation(); // ✅ Prevent event bubbling
+                        setMenuOpen(false);
+                      }}
+                      className="font-montserrat text-lg text-slate-gray hover:text-black transition-all duration-300"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+                {userInfo && (
+                  <li>
+                    <button
+                      onClick={logoutHandler}
+                      className="w-full px-4 py-2 bg-gray-500 hover:bg-red-700 text-white rounded-lg transition-all duration-300"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                )}
+                {!userInfo && (
+                  <li className="flex justify-between">
+                    <Link
+                      to="/signup"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setMenuOpen(false);
+                      }}
+                      className="text-slate-gray hover:text-black transition-all duration-300"
+                    >
+                      Sign up
+                    </Link>
+                    <Link
+                      to="/login"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setMenuOpen(false);
+                      }}
+                      className="text-slate-gray hover:text-black transition-all duration-300"
+                    >
+                      Log in
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
     </header>
@@ -151,4 +158,5 @@ const Nav = () => {
 };
 
 export default Nav;
+
 
