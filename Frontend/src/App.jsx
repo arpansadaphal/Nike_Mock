@@ -1,4 +1,4 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, HashRouter,Routes } from "react-router-dom";
 import { getCsrfToken } from "./utils/csrf";
 import { useEffect } from "react";
 import {
@@ -34,7 +34,7 @@ const App = () => {
     getCsrfToken();
   }, []);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -96,7 +96,7 @@ const App = () => {
         <Route path="/newarrivals" element={<NewArrivals />} />
         <Route path="/orders" element={<OrderHistory />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
