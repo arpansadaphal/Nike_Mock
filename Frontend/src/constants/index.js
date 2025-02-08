@@ -48,6 +48,10 @@ export const shoes = [
     thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738992991/pngwing.com_6_mkbzr9.png",
     bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738992991/pngwing.com_6_mkbzr9.png",
   },
+  {
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738993312/pngwing.com_7_gaohzj.png",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738993312/pngwing.com_7_gaohzj.png",
+  }, 
 ];
 
 
