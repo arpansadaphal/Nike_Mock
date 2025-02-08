@@ -45,8 +45,8 @@ export const shoes = [
     bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738953045/pngwing.com_5_humiuo.png",
   },
   {
-    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952473/pngwing.com_3_bzc6qb.png",
-    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952473/pngwing.com_3_bzc6qb.png",
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738992991/pngwing.com_6_mkbzr9.png",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738992991/pngwing.com_6_mkbzr9.png",
   },
 ];
 
