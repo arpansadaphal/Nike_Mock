@@ -11,19 +11,27 @@ const Categories = () => {
   const sliderRef = useRef(null); // Ref to control the slider
 
   useEffect(() => {
-    const getCategories = async () => {
-      try {
-        const response = await axios.get(
-          "https://nike-mock.onrender.com/api/categories/"
-        );
-        setCategories(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getCategories();
-  }, []);
+  const getCategories = async () => {
+    try {
+      const response = await axios.get(
+        "https://nike-mock.onrender.com/api/categories/"
+      );
+      setCategories(response.data);
+      console.log(response.data);
+
+      // Force slider to go to the first slide after categories are loaded
+      setTimeout(() => {
+        if (sliderRef.current) {
+          sliderRef.current.slickGoTo(0);
+        }
+      }, 100); // Small delay to allow the slider to initialize
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  getCategories();
+}, []);
+
 
   const settings = {
     dots: true,
