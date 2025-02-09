@@ -20,7 +20,7 @@ const Hero = () => {
 
         <h1 className="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
           <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10 pl-5">
-            The New Arrival
+            New Arrival
           </span>
           <br />
           <span className="text-coral-red inline-block mt-3 pl-5">
