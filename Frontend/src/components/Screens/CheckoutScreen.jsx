@@ -8,6 +8,9 @@ import Layout from "../Layout";
 import axiosInstance from "../../utils/axiosInstance";
 
 const Checkout = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
@@ -17,9 +20,7 @@ const Checkout = () => {
     (state) => state.order
   );
   // const { razorpayOrder } = useSelector((state) => state.razorPay);
-useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
   const [shippingDetails, setShippingDetails] = useState({
     name: "",
     email: "",
