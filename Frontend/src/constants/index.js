@@ -24,13 +24,13 @@ import {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "#about-us", label: "About Us" },
-  { href: "/products", label: "Products" },
+  //{ href: "/products", label: "Products" },
   { href: "/cart", label: "Cart" },
   // { href: "/orders", label: "Orders" },
 ];
 export const LoggedINnavLinks = [
   { href: "/", label: "Home" },
-  { href: "#about-us", label: "About Us" },
+  //{ href: "#about-us", label: "About Us" },
   { href: "/products", label: "Products" },
   { href: "/cart", label: "Cart" },
   { href: "/orders", label: "Orders" },
