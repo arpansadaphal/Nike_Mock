@@ -18,7 +18,7 @@ const Checkout = () => {
   );
   // const { razorpayOrder } = useSelector((state) => state.razorPay);
 useEffect(() => {
-    window.scrollTo(100, 100);
+    window.scrollTo(0, 0);
   }, []);
   const [shippingDetails, setShippingDetails] = useState({
     name: "",
