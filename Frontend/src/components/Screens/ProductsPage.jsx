@@ -14,7 +14,7 @@ const ProductsPage = () => {
   const { products, filters, loading, error } = useSelector(
     (state) => state.products
   );
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
