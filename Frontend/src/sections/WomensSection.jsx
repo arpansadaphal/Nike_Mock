@@ -19,6 +19,13 @@ const WomensSection = () => {
         );
         setProducts(response.data);
         console.log("Fetched products:", response.data);
+        
+          // Force slider to go to the first slide after categories are loaded
+      setTimeout(() => {
+        if (sliderRef.current) {
+          sliderRef.current.slickGoTo(0);
+        }
+      }, 100); // Small delay to allow the slider to initialize
       } catch (error) {
         console.error("Error fetching new arrivals:", error);
       }
