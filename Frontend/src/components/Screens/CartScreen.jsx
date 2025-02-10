@@ -1,4 +1,4 @@
-import React from "react";
+import React {useEffect   }from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { addToCart, removeFromCart } from "../../Slices/cartSlice";
@@ -16,9 +16,12 @@ const CartScreen = () => {
   const checkoutHandler = () => {
     navigate("/checkout");
   };
-
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout>
+    
       <div className=" min-h-screen">
         <div className="max-w-7xl mx-auto p-4 pt-24">
           {/* <h1 className="text-3xl text-center font-bold mb-8">Cart</h1> */}
