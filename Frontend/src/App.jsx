@@ -40,7 +40,7 @@ const App = () => {
           path="/"
           element={
             <main className="relative">
-             <Nav className="fixed top-0 left-0 right-0 z-50  shadow-md" />
+             <Nav />
               <section className="xl:padding-l wide:padding-r padding-b">
                 <Hero />
               </section>
