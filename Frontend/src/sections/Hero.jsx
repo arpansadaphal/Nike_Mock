@@ -15,7 +15,7 @@ const Hero = () => {
       className="relative flex flex-col lg:flex-row items-center justify-between w-full min-h-screen px-6 md:px-12 xl:px-24 py-16 bg-gradient-to-br from-gray-100 to-white"
     >
       {/* Left Content - Large Text */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center items-start pt-10">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-start pt-5">
         <p className="text-3xl font-semibold text-coral-red">Our Summer Collection</p>
 
         <h1 className="mt-6 text-[72px] sm:text-[85px] lg:text-[90px] font-bold text-gray-900 leading-[1.1]">
