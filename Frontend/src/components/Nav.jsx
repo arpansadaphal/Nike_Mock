@@ -96,7 +96,7 @@ const Nav = () => {
           />
         {/* Mobile Menu */}
 {menuOpen && (
-  <div className="absolute top-full right-0 mt-2 w-64  rounded-lg p-4 z-20 text-right">
+  <div className="absolute top-full right-0 mt-2 w-64   shadow-lg rounded-lg p-4 z-20 text-right">
     <ul className="flex flex-col gap-4">
       {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
         <li key={item.label} className="w-full">
