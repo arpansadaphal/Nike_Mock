@@ -136,11 +136,11 @@ export const footerLinks = [
     // ],
     links: [
       { name: "Sneakers", link: "/products?category=sneakers" },
-      { name: "Running", link: "/product/11" },
-      { name: "Basketball", link: "/product/10" },
-      { name: "Jordon", link: "/product/15" },
-      { name: "Tennis", link: "/product/20" },
-      { name: "Football", link: "/product/26" },
+      { name: "Running", link: "/products?category=running" },
+      { name: "Basketball", link: "/products?category=basketball" },
+      { name: "Jordon", link: "/products?category=jordon" },
+      { name: "Tennis", link: "/products?category=tennis" },
+      { name: "Football", link: "/products?category=football" },
     ],
   },
   {
