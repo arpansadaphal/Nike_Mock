@@ -177,14 +177,14 @@ const handlePayment = async () => {
       console.log("Initiating payment with order data:", orderData);
 
       const { data: razorpayOrder } = await axiosInstance.post(
-        "/create_razorpay_order/", // Removed extra "/api"
+        "/create_razorpay_order/", 
         orderData
       );
 
       console.log("Razorpay Order Created:", razorpayOrder);
 
       const options = {
-        key_id: razorpayOrder.key_id || "rzp_test_RO1zXBvs9Vy5Yy",
+        key_id: razorpayOrder.key_id,
         amount: razorpayOrder.amount,
         currency: razorpayOrder.currency,
         name: "Nike",
