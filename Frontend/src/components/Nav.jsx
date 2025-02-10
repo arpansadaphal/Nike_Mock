@@ -96,21 +96,21 @@ const Nav = () => {
           />
         {/* Mobile Menu */}
 {menuOpen && (
-  <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-20">
+  <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-20 text-right">
     <ul className="flex flex-col gap-4">
       {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
-        <li key={item.label}>
+        <li key={item.label} className="w-full">
           <Link
             to={item.href}
             onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
-            className="font-montserrat text-lg text-slate-gray hover:text-black transition-all duration-300"
+            className="block font-montserrat text-lg text-slate-gray hover:text-black transition-all duration-300"
           >
             {item.label}
           </Link>
         </li>
       ))}
       {userInfo && (
-        <li>
+        <li className="w-full">
           <button
             onClick={() => {
               logoutHandler();
@@ -123,7 +123,7 @@ const Nav = () => {
         </li>
       )}
       {!userInfo && (
-        <li className="flex  justify-between justify-left">
+        <li className="flex justify-end gap-4 w-full">
           <Link
             to="/signup"
             onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
