@@ -9,7 +9,9 @@ const OrderDetails = () => {
   const { order_id } = useParams();
   const [orderDetails, setOrderDetails] = useState(null);
   const [error, setError] = useState(null);
-
+useEffect(() => {
+    window.scrollTo(150, 150);
+  }, []);
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
