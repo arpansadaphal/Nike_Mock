@@ -15,18 +15,16 @@ const Hero = () => {
       className="relative flex flex-col lg:flex-row items-center justify-between w-full min-h-screen px-6 md:px-12 xl:px-24 py-16 bg-gradient-to-br from-gray-100 to-white"
     >
       {/* Left Content - Large Text */}
-      <div className="lg:w-1/2 flex flex-col justify-center items-start w-full text-center lg:text-left">
-        <p className="text-2xl sm:text-3xl font-semibold text-coral-red">
-          Our Summer Collection
-        </p>
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-start">
+        <p className="text-3xl font-semibold text-coral-red">Our Summer Collection</p>
 
-        <h1 className="mt-6 text-6xl sm:text-7xl lg:text-8xl font-bold text-gray-900 leading-tight">
+        <h1 className="mt-6 text-[72px] sm:text-[85px] lg:text-[90px] font-bold text-gray-900 leading-[1.1]">
           <span className="relative z-10 pr-10 pl-2">New Arrival</span>
           <br />
           <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
         </h1>
 
-        <p className="font-montserrat text-gray-700 text-lg leading-8 mt-6 mb-12 sm:max-w-sm">
+        <p className="font-montserrat text-gray-700 text-lg leading-8 mt-6 mb-12 max-w-md">
           Experience the ultimate blend of comfort and style with our latest Nike collection.
         </p>
 
@@ -36,9 +34,9 @@ const Hero = () => {
       </div>
 
       {/* Right Content - Shoe Image & Selection */}
-      <div className="relative flex-1 flex flex-col items-center lg:items-end justify-center lg:w-1/2">
+      <div className="relative w-full lg:w-1/2 flex flex-col items-center lg:items-end justify-center">
         {/* Shoe Display */}
-        <div className="relative w-[90%] md:w-[400px] xl:w-[450px] flex items-center justify-center">
+        <div className="relative w-[400px] md:w-[500px] lg:w-[550px] flex items-center justify-center">
           <img
             src={bigShoeImg}
             alt="shoe collection"
@@ -64,6 +62,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 
