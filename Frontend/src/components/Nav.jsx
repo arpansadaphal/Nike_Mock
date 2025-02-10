@@ -23,7 +23,7 @@ const Nav = () => {
   };
 
   return (
- <header className="padding-x py-8 fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+<header className="padding-x py-8 absolute z-10 w-full">
 
       <nav className="flex justify-between items-center max-container">
         {/* Logo */}
@@ -97,7 +97,7 @@ const Nav = () => {
           />
         {/* Mobile Menu */}
 {menuOpen && (
-  <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-20">
+  <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-50">
     <ul className="flex flex-col gap-4">
       {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
         <li key={item.label}>
@@ -144,6 +144,7 @@ const Nav = () => {
     </ul>
   </div>
 )}
+
 
         </div>
       </nav>
