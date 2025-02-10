@@ -17,7 +17,7 @@ const CartScreen = () => {
     navigate("/checkout");
   };
    useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(50, 50);
   }, []);
   return (
     <Layout>
