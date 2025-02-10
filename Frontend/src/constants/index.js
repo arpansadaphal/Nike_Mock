@@ -135,7 +135,7 @@ export const footerLinks = [
     //   { name: "Nike Cortez", link: "/" },
     // ],
     links: [
-      { name: "Sneakers", link: "/categories/sneakers" },
+      { name: "Sneakers", link: "/products?category=sneakers" },
       { name: "Running", link: "/product/11" },
       { name: "Basketball", link: "/product/10" },
       { name: "Jordon", link: "/product/15" },
