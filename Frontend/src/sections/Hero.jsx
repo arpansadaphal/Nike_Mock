@@ -16,9 +16,9 @@ const Hero = () => {
     >
       {/* Left Content - Large Text */}
       <div className="md:w-1/2 flex flex-col justify-center items-start w-full">
-        <p className="text-2xl font-semibold text-coral-red">Our Summer Collection</p>
+        <p className="text-2xl sm:text-3xl font-semibold text-coral-red">Our Summer Collection</p>
 
-        <h1 className="mt-6 text-7xl sm:text-8xl font-bold text-gray-900 leading-tight">
+        <h1 className="mt-6 text-6xl sm:text-7xl md:text-8xl font-bold text-gray-900 leading-tight">
           <span className="relative z-10 pr-10 pl-2">New Arrival</span>
           <br />
           <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
@@ -35,8 +35,8 @@ const Hero = () => {
 
       {/* Right Content - Shoe Image & Selection */}
       <div className="relative flex-1 flex flex-col items-center md:items-end justify-center md:w-1/2">
-        {/* Shoe Display (Removed Circle Background) */}
-        <div className="relative w-[320px] md:w-[400px] xl:w-[450px] flex items-center justify-center">
+        {/* Shoe Display (No Circle Background) */}
+        <div className="relative w-[80%] md:w-[400px] xl:w-[450px] flex items-center justify-center">
           <img
             src={bigShoeImg}
             alt="shoe collection"
@@ -44,7 +44,7 @@ const Hero = () => {
           />
         </div>
 
-        {/* Shoe Selection */}
+        {/* Shoe Selection (Slider) */}
         <div className="flex gap-3 md:gap-6 mt-6 max-w-[90%] md:max-w-[75%] lg:max-w-full overflow-x-auto px-2 md:px-0">
           {shoes.map((image, index) => (
             <ShoeCard
@@ -62,6 +62,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 
