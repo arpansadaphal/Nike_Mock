@@ -123,7 +123,7 @@ const Nav = () => {
         </li>
       )}
       {!userInfo && (
-        <li className="flex justify-between">
+        <li className="flex ">
           <Link
             to="/signup"
             onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
