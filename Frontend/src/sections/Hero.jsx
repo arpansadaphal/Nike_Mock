@@ -15,10 +15,10 @@ const Hero = () => {
       className="relative flex flex-col md:flex-row items-center justify-between w-full min-h-screen px-6 md:px-12 xl:px-24 py-16 bg-gradient-to-br from-gray-100 to-white"
     >
       {/* Left Content - Large Text */}
-      <div className="md:w-1/2 flex flex-col justify-center items-start w-full max-md:pb-10">
+      <div className="md:w-1/2 flex flex-col justify-center items-start w-full">
         <p className="text-2xl font-semibold text-coral-red">Our Summer Collection</p>
 
-        <h1 className="mt-6 text-7xl md:text-8xl font-bold text-gray-900 leading-tight">
+        <h1 className="mt-6 text-7xl sm:text-8xl font-bold text-gray-900 leading-tight">
           <span className="relative z-10 pr-10 pl-2">New Arrival</span>
           <br />
           <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
@@ -35,12 +35,12 @@ const Hero = () => {
 
       {/* Right Content - Shoe Image & Selection */}
       <div className="relative flex-1 flex flex-col items-center md:items-end justify-center md:w-1/2">
-        {/* Shoe Display */}
-        <div className="relative w-[320px] md:w-[400px] xl:w-[450px] h-[320px] md:h-[400px] xl:h-[450px] bg-white shadow-xl rounded-full flex items-center justify-center">
+        {/* Shoe Display (Removed Circle Background) */}
+        <div className="relative w-[320px] md:w-[400px] xl:w-[450px] flex items-center justify-center">
           <img
             src={bigShoeImg}
             alt="shoe collection"
-            className="w-4/5 object-contain drop-shadow-lg"
+            className="w-full object-contain drop-shadow-lg"
           />
         </div>
 
@@ -62,6 +62,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 
