@@ -23,8 +23,7 @@ const Nav = () => {
   };
 
   return (
-<header className="padding-x py-8 absolute z-10 w-full">
-
+    <header className="padding-x py-8 absolute z-10 w-full">
       <nav className="flex justify-between items-center max-container">
         {/* Logo */}
         <Link to="/">
@@ -96,17 +95,14 @@ const Nav = () => {
             className="cursor-pointer"
           />
         {/* Mobile Menu */}
-{/* Mobile Menu */}
-{/* Mobile Menu */}
 {menuOpen && (
- <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-[100]">
-
+  <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-20">
     <ul className="flex flex-col gap-4">
       {(userInfo ? LoggedINnavLinks : navLinks).map((item) => (
         <li key={item.label}>
           <Link
             to={item.href}
-            onClick={() => setMenuOpen(false)}
+            onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
             className="font-montserrat text-lg text-slate-gray hover:text-black transition-all duration-300"
           >
             {item.label}
@@ -118,7 +114,7 @@ const Nav = () => {
           <button
             onClick={() => {
               logoutHandler();
-              setMenuOpen(false);
+              setMenuOpen(false); // ✅ Close menu after logout
             }}
             className="w-full px-4 py-2 bg-gray-500 hover:bg-red-700 text-white rounded-lg transition-all duration-300"
           >
@@ -130,14 +126,14 @@ const Nav = () => {
         <li className="flex justify-between">
           <Link
             to="/signup"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
             className="text-slate-gray hover:text-black transition-all duration-300"
           >
             Sign up
           </Link>
           <Link
             to="/login"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => setMenuOpen(false)} // ✅ Close menu after clicking
             className="text-slate-gray hover:text-black transition-all duration-300"
           >
             Log in
@@ -148,13 +144,9 @@ const Nav = () => {
   </div>
 )}
 
-
-
-
         </div>
       </nav>
     </header>
-
   );
 };
 
