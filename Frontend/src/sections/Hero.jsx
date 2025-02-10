@@ -12,13 +12,13 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col xl:flex-row items-center justify-between w-full min-h-screen px-6 md:px-12 xl:px-24 py-16 bg-gradient-to-br from-gray-100 to-white"
+      className="relative flex flex-col md:flex-row items-center justify-between w-full min-h-screen px-6 md:px-12 xl:px-24 py-16 bg-gradient-to-br from-gray-100 to-white"
     >
       {/* Left Content - Large Text */}
-      <div className="xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:px-8 pt-20">
+      <div className="md:w-1/2 flex flex-col justify-center items-start w-full max-md:pb-10">
         <p className="text-2xl font-semibold text-coral-red">Our Summer Collection</p>
 
-        <h1 className="mt-6 text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold text-gray-900 leading-tight">
+        <h1 className="mt-6 text-7xl md:text-8xl font-bold text-gray-900 leading-tight">
           <span className="relative z-10 pr-10 pl-2">New Arrival</span>
           <br />
           <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
@@ -34,9 +34,9 @@ const Hero = () => {
       </div>
 
       {/* Right Content - Shoe Image & Selection */}
-      <div className="relative flex-1 flex flex-col items-center xl:items-end xl:justify-center xl:w-1/2">
+      <div className="relative flex-1 flex flex-col items-center md:items-end justify-center md:w-1/2">
         {/* Shoe Display */}
-        <div className="relative w-[380px] md:w-[400px] xl:w-[450px] h-[380px] md:h-[400px] xl:h-[450px] bg-white shadow-xl rounded-full flex items-center justify-center">
+        <div className="relative w-[320px] md:w-[400px] xl:w-[450px] h-[320px] md:h-[400px] xl:h-[450px] bg-white shadow-xl rounded-full flex items-center justify-center">
           <img
             src={bigShoeImg}
             alt="shoe collection"
@@ -45,7 +45,7 @@ const Hero = () => {
         </div>
 
         {/* Shoe Selection */}
-        <div className="flex gap-4 md:gap-6 mt-6 max-w-[90%] md:max-w-[75%] lg:max-w-full">
+        <div className="flex gap-3 md:gap-6 mt-6 max-w-[90%] md:max-w-[75%] lg:max-w-full overflow-x-auto px-2 md:px-0">
           {shoes.map((image, index) => (
             <ShoeCard
               key={index}
@@ -62,6 +62,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 
