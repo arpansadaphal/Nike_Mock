@@ -135,12 +135,12 @@ export const footerLinks = [
     //   { name: "Nike Cortez", link: "/" },
     // ],
     links: [
-      { name: "Air Force 1 SP", link: "/product/2" },
-      { name: "Flex Runner 3", link: "/product/11" },
-      { name: "IsoFly", link: "/product/10" },
-      { name: "Heir Series PF", link: "/product/15" },
-      { name: "LeBron TR 1", link: "/product/20" },
-      { name: "Elevate 3", link: "/product/26" },
+      { name: "Sneakers", link: "/product/2" },
+      { name: "Running", link: "/product/11" },
+      { name: "Basketball", link: "/product/10" },
+      { name: "Jordon", link: "/product/15" },
+      { name: "Tennis", link: "/product/20" },
+      { name: "Football", link: "/product/26" },
     ],
   },
   {
