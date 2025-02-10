@@ -24,6 +24,9 @@ const CartScreen = () => {
     
       <div className=" min-h-screen">
         <div className="max-w-7xl mx-auto p-4 pt-24">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
+          Checkout
+        </h2>
           {/* <h1 className="text-3xl text-center font-bold mb-8">Cart</h1> */}
           {cartItems.length === 0 ? (
             <div className="text-center py-16">
