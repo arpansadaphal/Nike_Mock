@@ -10,8 +10,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
@@ -245,9 +243,9 @@ from cloudinary.storage import CloudinaryStorage
 
 # Cloudinary Configuration
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": config("CLOUD_NAME", default="dnl8xcyir"),
-    "API_KEY": config("CLOUDINARY_API_KEY", default="176777252912329"),
-    "API_SECRET": config("CLOUDINARY_API_SECRET", default="rKXSXw4xDgYYdSZQe3cA51KF5TY"),
+    "CLOUD_NAME": config("CLOUD_NAME"),
+    "API_KEY": config("CLOUDINARY_API_KEY"),
+    "API_SECRET": config("CLOUDINARY_API_SECRET"),
 }
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
