@@ -17,7 +17,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+
 
 ALLOWED_HOSTS = ["nike-mock.onrender.com","https://nikemock.vercel.app"]
 
