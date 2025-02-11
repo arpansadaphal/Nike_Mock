@@ -93,20 +93,11 @@ WSGI_APPLICATION = "nike.wsgi.application"
 #     }
 # }
 
-#DATABASES = {
- #   'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nike_db_xjs8',
-        'USER': 'nike_db_xjs8_user',
-        'PASSWORD': 'PxnZmH2hjiktuU8sNVBXR6ctXD1zolWh',
-        'HOST': 'dpg-cuc9c39u0jms73850nfg-a',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
