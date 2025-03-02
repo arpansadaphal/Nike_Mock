@@ -6,7 +6,7 @@ import { arrowRight } from "../assets/icons";
 
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(
-    "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952449/pngwing.com_4_wgavhx.png"
+    "https://res.cloudinary.com/dnl8xcyir/image/upload/v1740923012/pngwing.com_4_ev7eje.png"
   );
 
   return (
