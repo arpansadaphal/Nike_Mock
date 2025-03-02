@@ -37,8 +37,8 @@ export const LoggedINnavLinks = [
 ];
 export const shoes = [
   {
-    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952449/pngwing.com_4_wgavhx.png",
-    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1738952449/pngwing.com_4_wgavhx.png",
+    thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1740923012/pngwing.com_4_ev7eje.png",
+    bigShoe: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1740923012/pngwing.com_4_ev7eje.png",
   },
   {
     thumbnail: "https://res.cloudinary.com/dnl8xcyir/image/upload/v1740919037/pngwing.com_5_pg8ql6.png",
