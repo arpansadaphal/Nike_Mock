@@ -56,23 +56,16 @@ const ProductsPage = () => {
   const toggleFilterVisibility = () => {
     setIsFilterVisible(!isFilterVisible);
   };
-  // useEffect(() => {
+  useEffect(() => {
   //   // Simulate a loading delay (e.g., fetching data)
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 2000);
+  const timer = setTimeout(() => {
+  setIsLoading(false);
+  }, 500);
 
-  //   return () => clearTimeout(timer);
-  // }, []);
-if (loading) {
-    return (
-      <Layout>
-        <div className="flex justify-center items-center h-screen">
-          <ClipLoader color="#F04F47" size={60} />
-        </div>
-      </Layout>
-    );
-  }
+  return () => clearTimeout(timer);
+  }, []);
+
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
