@@ -64,6 +64,15 @@ const ProductsPage = () => {
 
   //   return () => clearTimeout(timer);
   // }, []);
+if (loading) {
+    return (
+      <Layout>
+        <div className="flex justify-center items-center h-screen">
+          <ClipLoader color="#F04F47" size={60} />
+        </div>
+      </Layout>
+    );
+  }
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
