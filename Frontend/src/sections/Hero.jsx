@@ -16,7 +16,7 @@ const Hero = () => {
     >
       {/* Left Content - Large Text */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-start pt-5">
-        <p className="text-xl font-semibold text-coral-red">Summer Collection</p>
+        <p className="text-xl font-semibold text-coral-red"> Summer Collection</p>
 
         <h1 className="mt-6 text-[72px] sm:text-[85px] lg:text-[90px] font-bold text-gray-900 leading-[1.1]">
           <span className="relative z-10 pr-10 pl-2">New Arrival</span>
