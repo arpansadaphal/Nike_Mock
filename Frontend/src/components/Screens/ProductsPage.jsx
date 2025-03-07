@@ -1,4 +1,4 @@
-// ProductsPage.js
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -98,11 +98,11 @@ const ProductsPage = () => {
 
           {/* {loading && <p>Loading...</p>} */}
           {error && <p>{error}</p>}
-          {/* {loading ? (
+           {loading ? (
             <div className="flex justify-center items-center w-full h-screen">
               <ClipLoader color="#F04F47" size={60} />
             </div>
-          ) : ( */}
+          ) : ( 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((product) => (
               <ProductCard key={product._id} product={product} />
