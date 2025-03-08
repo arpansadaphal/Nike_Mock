@@ -99,7 +99,7 @@ const ProductsPage = () => {
           {/* {loading && <p>Loading...</p>} */}
           {error && <p>{error}</p>}
            {loading ? (
-            <div className="flex justify-center  w-full h-screen">
+            <div className="flex justify-center items-center w-full h-screen">
               <ClipLoader color="#F04F47" size={60} />
             </div>
           ) : ( 
