@@ -53,11 +53,11 @@ const ProductScreen = () => {
 
   return (
     <Layout>
-      {/* {loading ? (
+       {loading ? (
         <div className="flex justify-center items-center w-full h-screen">
           <ClipLoader color="#F04F47" size={60} />
         </div>
-      ) : ( */}
+      ) : ( 
       <div className="max-w-screen-xl mx-auto px-4 pt-24">
         <div className="flex flex-col md:flex-row items-start gap-8">
           {/* Product Image Slider */}
@@ -125,7 +125,7 @@ const ProductScreen = () => {
           </div>
         </div>
       </div>
-      {/* )} */}
+      )} 
     </Layout>
   );
 };
