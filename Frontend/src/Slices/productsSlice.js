@@ -116,50 +116,17 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // Thunk to fetch products based on filters
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async (filters, { dispatch }) => {
+  async (filters) => {
     try {
       const queryString = new URLSearchParams(filters).toString();
       const response = await fetch(`https://nike-mock.onrender.com/api/products/?${queryString}`);
       const data = await response.json();
-
-      if (data.length > 0) {
-        dispatch(setLoading(false)); // Stop loading as soon as data starts coming
-      }
-
       return data;
     } catch (error) {
       throw error;
     }
   }
 );
-
-// export const fetchProducts = createAsyncThunk(
-//   "products/fetchProducts",
-//   async () => {
-//     const response = await apiFetchProducts();  // Pass filters to the API
-//     return response.data;
-//     console.log(response.data)
-//   }
-// );
-/*
-export const fetchProducts = async (filters) => {
-  try {
-    const validFilters = Object.fromEntries(
-      Object.entries(filters).filter(([_, v]) => v)
-    );
-    const queryString = new URLSearchParams(validFilters).toString();
-    console.log("Fetching products with query:", queryString);
-    
-    const response = await API.get(`/products/?${queryString}`);
-    console.log("Response Data:", response.data);
-    
-    return response.data;
-  } catch (error) {
-    console.error("Fetch Products Error:", error.response?.data || error.message);
-    throw error;
-  }
-};
-*/
 
 export const fetchNewProducts = createAsyncThunk(
   "new_products/fetchNewProducts",
@@ -188,18 +155,18 @@ export const productsSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = { ...state.filters, ...action.payload };
     },
-    setLoading: (state, action) => {
-      state.loading = action.payload;
-    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
-        state.loading = true;
+        // Show loader only if there are no products
+        if (state.products.length === 0) {
+          state.loading = true;
+        }
         state.error = null;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.loading = false; // Ensure loading is false
+        state.loading = false;
         state.products = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
@@ -221,5 +188,5 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { setFilters, setLoading } = productsSlice.actions;
+export const { setFilters } = productsSlice.actions;
 export default productsSlice.reducer;
