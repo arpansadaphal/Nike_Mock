@@ -188,6 +188,9 @@ export const productsSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = { ...state.filters, ...action.payload };
     },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -196,7 +199,7 @@ export const productsSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.loading = false;
+        state.loading = false; // Ensure loading is false
         state.products = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
@@ -218,5 +221,5 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { setFilters } = productsSlice.actions;
+export const { setFilters, setLoading } = productsSlice.actions;
 export default productsSlice.reducer;
