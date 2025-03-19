@@ -116,13 +116,23 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // Thunk to fetch products based on filters
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async (filters) => {
-    const queryString = new URLSearchParams(filters).toString();
-   // const response = await fetch(`/api/products/?${queryString}`);
-    const response = await fetch(`https://nike-mock.onrender.com/api/products/?${queryString}`);
-    return await response.json();
+  async (filters, { dispatch }) => {
+    try {
+      const queryString = new URLSearchParams(filters).toString();
+      const response = await fetch(`https://nike-mock.onrender.com/api/products/?${queryString}`);
+      const data = await response.json();
+
+      if (data.length > 0) {
+        dispatch(setLoading(false)); // Stop loading as soon as data starts coming
+      }
+
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
 );
+
 // export const fetchProducts = createAsyncThunk(
 //   "products/fetchProducts",
 //   async () => {
