@@ -163,7 +163,11 @@ const Checkout = () => {
       setIsPaymentProcessing(false);
     }
   };
-
+	  useEffect(() => {
+    if (!userInfo) {
+      navigate("/login?redirect=/checkout");
+    }
+  }, [userInfo, navigate]);
   return (
     <Layout>
       <div className="checkout-page p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
