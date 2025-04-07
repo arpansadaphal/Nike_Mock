@@ -221,10 +221,12 @@ if not DEBUG:
 
 # RAZOR_KEY_ID = "key"
 # RAZOR_KEY_SECRET = "secret key"
+RAZORPAY_KEY = "rzp_test_kU7Y6Vpoqy0B0u"
+RAZORPAY_SECRET = "bugodwuxy3x0bmzkVVFwswi1"
 
 
-RAZORPAY_KEY = config('RAZORPAY_KEY')
-RAZORPAY_SECRET = config('RAZORPAY_SECRET')
+#RAZORPAY_KEY = config('RAZORPAY_KEY')
+#RAZORPAY_SECRET = config('RAZORPAY_SECRET')
 
 # Cloudinary Imports (Move to the bottom)
 import cloudinary
