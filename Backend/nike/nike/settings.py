@@ -194,15 +194,15 @@ CSRF_TRUSTED_ORIGINS = [
     "https://nikemock.vercel.app",
     "http://localhost:5173",  # React development server
 ]
-CORS_ALLOW_CREDENTIALS = True  # Allow credentials like cookies
+CORS_ALLOW_CREDENTIALS = True  # Allow credentials like cookies.
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"  # Specify the directory for uploaded files
+MEDIA_ROOT = BASE_DIR / "media"  # Specify the directory for uploaded files.
 # Media Files (Uploaded images, etc.)
 #MEDIA_URL = "/media/"
 #MEDIA_ROOT = BASE_DIR / "media"
 
-# Ensure static files are collected
+# Ensure static files are collected.
 #STATIC_URL = "/static/"
 #STATIC_ROOT = BASE_DIR / "staticfiles"
 """
@@ -227,13 +227,13 @@ if not DEBUG:
 RAZORPAY_KEY = config('RAZORPAY_KEY')
 RAZORPAY_SECRET = config('RAZORPAY_SECRET')
 
-# Cloudinary Imports (Move to the bottom)
+# Cloudinary Imports (Move to the bottom).
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from cloudinary.storage import CloudinaryStorage
 
-# Cloudinary Configuration
+# Cloudinary Configuration.
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": config("CLOUD_NAME"),
     "API_KEY": config("CLOUDINARY_API_KEY"),
